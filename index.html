@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ramveer Choudhary | Scientific Advisor & Genome Biology Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --gold: #f59e0b;
+            --text: #334155;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .dna-visualization {
+            width: 100%;
+            height: 500px;
+            background: radial-gradient(circle at center, rgba(59,130,246,0.1) 0%, transparent 70%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            color: var(--text);
+        }
+
+        .card-1 {
+            top: 10%;
+            right: -20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-2 {
+            bottom: 20%;
+            left: -30px;
+            animation: float 6s ease-in-out infinite 2s;
+        }
+
+        .card-3 {
+            top: 50%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Expertise Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .expertise-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border-color: var(--accent-light);
+        }
+
+        .expertise-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--gold));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 450px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid var(--bg);
+            box-shadow: 0 0 0 4px var(--accent-light);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: 50%;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-org {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-desc {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Publications */
+        .pubs-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .pub-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .pub-card:hover {
+            border-color: var(--accent-light);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .pub-journal {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .pub-journal-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .pub-year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pub-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-highlights {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .highlight-tag {
+            background: var(--bg-alt);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .highlight-tag.nature { background: #dbeafe; color: #1e40af; }
+        .highlight-tag.cell { background: #fce7f3; color: #9d174d; }
+        .highlight-tag.nar { background: #d1fae5; color: #065f46; }
+
+        .pub-metrics {
+            text-align: right;
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-alt);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .service-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-list li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Impact Stats */
+        .impact-section {
+            background: var(--primary);
+            color: white;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .impact-item .number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            font-family: 'Playfair Display', serif;
+            display: block;
+        }
+
+        .impact-item .label {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Testimonials/Partners */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            opacity: 0.6;
+        }
+
+        .partner-logo {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-alt);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .contact-method:hover .contact-label {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .contact-method:hover .contact-icon {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background: var(--bg-alt);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-light);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-dot {
+                left: 30px !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .expertise-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pub-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* DNA Helix Animation */
+        .dna-helix {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .strand {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .base-pair {
+            position: absolute;
+            left: 50%;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            transform-origin: center;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(59,130,246,0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Dr. Ramveer Choudhary</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Scientific Advisor for Biotech Innovation</h1>
+                <p class="hero-subtitle">Bridging fundamental genome biology with therapeutic strategy • 15+ years in DNA damage response, 3D genome organization & oncology</p>
+                <div class="hero-badges">
+                    <span class="badge">🧬 Genome Integrity</span>
+                    <span class="badge">🔬 Molecular Oncology</span>
+                    <span class="badge">⚡ DNA Topology</span>
+                    <span class="badge">🎯 Drug Discovery</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dna-visualization">
+                    <div class="floating-card card-1">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Research</div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="stat-number">18+</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="stat-number">Nature</div>
+                        <div class="stat-label">Cell Reports</div>
+                    </div>
+                    <svg width="300" height="400" viewBox="0 0 300 400" style="opacity: 0.3;">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M150,50 Q250,100 150,150 Q50,200 150,250 Q250,300 150,350" stroke="url(#grad1)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <path d="M150,50 Q50,100 150,150 Q250,200 150,250 Q50,300 150,350" stroke="url(#grad1)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+                        <circle cx="150" cy="50" r="8" fill="#3b82f6"/>
+                        <circle cx="150" cy="150" r="8" fill="#60a5fa"/>
+                        <circle cx="150" cy="250" r="8" fill="#f59e0b"/>
+                        <circle cx="150" cy="350" r="8" fill="#fbbf24"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Core Scientific Competencies</h2>
+                <p>Translational expertise spanning fundamental research to biotech application</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">🧬</div>
+                    <h3>DNA Damage Response (DDR)</h3>
+                    <p>Deep expertise in replication fork dynamics, transcription-coupled repair, and genome stability mechanisms. Published landmark studies on RNAPII degradation and repair pathways in Nature and Nucleic Acids Research.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">🔄</div>
+                    <h3>3D Genome Organization</h3>
+                    <p>Pioneering work on DNA topology, chromatin architecture, and inter-chromosomal catenation. Discovered novel mechanisms of genome compartmentalization and their role in cancer biology.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">⚗️</div>
+                    <h3>Target Identification</h3>
+                    <p>Expert in identifying and validating therapeutic targets in oncology, particularly in genome integrity pathways. Experience with CRISPR screening, chemical genomics, and mechanism-based drug discovery.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">⏱️</div>
+                    <h3>Longevity & Aging Biology</h3>
+                    <p>Research focus on cellular senescence, DNA repair efficiency in aging, and mechano-genomics. Understanding of how genome stability mechanisms deteriorate with age and potential interventions.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">🔍</div>
+                    <h3>Scientific Due Diligence</h3>
+                    <p>Comprehensive evaluation of biotech pipelines, platform technologies, and therapeutic mechanisms. Critical assessment of scientific rationale, competitive positioning, and IP landscapes.</p>
+                </div>
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">📊</div>
+                    <h3>Translational Strategy</h3>
+                    <p>Bridging academic discovery to clinical application. Experience with IND-enabling studies, biomarker development, and regulatory pathway navigation for oncology therapeutics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <span class="number">15+</span>
+                    <div class="label">Years Research Excellence</div>
+                </div>
+                <div class="impact-item">
+                    <span class="number">18+</span>
+                    <div class="label">Peer-Reviewed Publications</div>
+                </div>
+                <div class="impact-item">
+                    <span class="number">10+</span>
+                    <div class="label">PhD Students Mentored</div>
+                </div>
+                <div class="impact-item">
+                    <span class="number">4</span>
+                    <div class="label">Active PhD Supervisions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Career Trajectory</h2>
+                <p>From foundational research to scientific leadership at Europe's premier cancer institute</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2025 — Present</div>
+                        <h4 class="timeline-title">Senior Researcher (CoCoCo)</h4>
+                        <div class="timeline-org">IFOM ETS — The AIRC Institute of Molecular Oncology, Milan</div>
+                        <p class="timeline-desc">Leading investigations on nuclear and non-nuclear pathways controlling genome integrity and nuclear plasticity. Directing multi-institutional research and supervising 4 PhD students.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2024 — Nov 2025</div>
+                        <h4 class="timeline-title">Type B Researcher (PRIN 2022)</h4>
+                        <div class="timeline-org">IFOM ETS / University of Milan</div>
+                        <p class="timeline-desc">Principal investigator on MUR-PRIN 2022 grant: "DNA breaks and topological context." Developed novel understanding of how DNA supercoiling regulates chromosome compaction and genomic instability.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2018 — Mar 2024</div>
+                        <h4 class="timeline-title">Postdoctoral Research Fellow</h4>
+                        <div class="timeline-org">IFOM ETS — Genome Stability Laboratory</div>
+                        <p class="timeline-desc">Authored landmark studies on 3D genome organization and DNA topology published in <strong>Nature</strong> and <strong>Cell Reports</strong>. Established international collaborations across 4 continents.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2014 — 2018</div>
+                        <h4 class="timeline-title">PhD in Systems Medicine</h4>
+                        <div class="timeline-org">SEMM / University of Milan — Marie Curie ITN Fellow</div>
+                        <p class="timeline-desc">Marie Curie ITN-aDDRess ESR Fellow (FP7 Grant 316390). Investigated mechanisms controlling replication fork convergence and termination. Discovered role of Sen1/SETX and Rrm3 helicases in replication termination.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2008 — 2013</div>
+                        <h4 class="timeline-title">Early Research Training</h4>
+                        <div class="timeline-org">NCBS-TIFR, Bangalore, India</div>
+                        <p class="timeline-desc">MS by Research with Prof. Yamuna Krishnan (DST Fellowship): Developed genetically encodable RNA biosensors for TERRA. Junior Research Fellow with Prof. K. Vijay Raghavan: Neural circuitry in Drosophila.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Selected Publications</h2>
+                <p>High-impact contributions to genome biology and molecular oncology</p>
+            </div>
+            <div class="pubs-grid">
+                <div class="pub-card fade-in">
+                    <div class="pub-journal">
+                        <div class="pub-journal-name">Nature</div>
+                        <div class="pub-year">2020</div>
+                    </div>
+                    <div class="pub-content">
+                        <h4>Negative supercoil at gene boundaries modulates gene topology</h4>
+                        <p class="pub-authors">Achar YJ, Adhil M, <strong>Choudhary R</strong>, Gilbert N, Foiani M</p>
+                        <div class="pub-highlights">
+                            <span class="highlight-tag nature">Nature</span>
+                            <span class="highlight-tag">3D Genome</span>
+                            <span class="highlight-tag">DNA Topology</span>
+                        </div>
+                    </div>
+                    <div class="pub-metrics">
+                        <span style="color: var(--gold); font-size: 1.5rem;">★</span>
+                    </div>
+                </div>
+
+                <div class="pub-card fade-in">
+                    <div class="pub-journal">
+                        <div class="pub-journal-name">Nucleic Acids Res</div>
+                        <div class="pub-year">2026</div>
+                    </div>
+                    <div class="pub-content">
+                        <h4>RNA polymerase II degradation triggered by DNA repair occurs in trans and independently of how the lesion is recognized</h4>
+                        <p class="pub-authors"><strong>Choudhary R</strong>, Muñoz JC, Beckerman I, et al.</p>
+                        <div class="pub-highlights">
+                            <span class="highlight-tag nar">NAR</span>
+                            <span class="highlight-tag">DNA Repair</span>
+                            <span class="highlight-tag">Transcription</span>
+                        </div>
+                    </div>
+                    <div class="pub-metrics">
+                        <span style="color: var(--accent); font-weight: 600;">New</span>
+                    </div>
+                </div>
+
+                <div class="pub-card fade-in">
+                    <div class="pub-journal">
+                        <div class="pub-journal-name">Cell Reports</div>
+                        <div class="pub-year">2023</div>
+                    </div>
+                    <div class="pub-content">
+                        <h4>Sen1 and Rrm3 ensure permissive topological conditions for replication termination</h4>
+                        <p class="pub-authors"><strong>Choudhary R</strong>, Niska-Blakie J, Adhil M, et al.</p>
+                        <div class="pub-highlights">
+                            <span class="highlight-tag cell">Cell Press</span>
+                            <span class="highlight-tag">Replication</span>
+                            <span class="highlight-tag">Helicases</span>
+                        </div>
+                    </div>
+                    <div class="pub-metrics">
+                        <span style="color: var(--text-light);">Cited 45+</span>
+                    </div>
+                </div>
+
+                <div class="pub-card fade-in">
+                    <div class="pub-journal">
+                        <div class="pub-journal-name">Nat Commun</div>
+                        <div class="pub-year">2020</div>
+                    </div>
+                    <div class="pub-content">
+                        <h4>The Rad53-Spt21 and Tel1 axes couple glucose tolerance to histone dosage</h4>
+                        <p class="pub-authors">Bruhn C, Ajazi A, Ferrari E, <strong>Choudhary R</strong>, et al.</p>
+                        <div class="pub-highlights">
+                            <span class="highlight-tag nature">Nature</span>
+                            <span class="highlight-tag">Metabolism</span>
+                            <span class="highlight-tag">Checkpoint</span>
+                        </div>
+                    </div>
+                    <div class="pub-metrics">
+                        <span style="color: var(--text-light);">Cited 80+</span>
+                    </div>
+                </div>
+
+                <div class="pub-card fade-in">
+                    <div class="pub-journal">
+                        <div class="pub-journal-name">NAR</div>
+                        <div class="pub-year">2021</div>
+                    </div>
+                    <div class="pub-content">
+                        <h4>Elongating RNA polymerase II and RNA:DNA hybrids hinder fork progression at head-on collisions</h4>
+                        <p class="pub-authors">Zardoni L, Nardini E, <strong>Choudhary R</strong>, et al.</p>
+                        <div class="pub-highlights">
+                            <span class="highlight-tag nar">NAR</span>
+                            <span class="highlight-tag">R-loops</span>
+                            <span class="highlight-tag">Fork Collapse</span>
+                        </div>
+                    </div>
+                    <div class="pub-metrics">
+                        <span style="color: var(--text-light);">Cited 60+</span>
+                    </div>
+                </div>
+
+                <div class="pub-card fade-in">
+                    <div class="pub-journal">
+                        <div class="pub-journal-name">Cell Rep</div>
+                        <div class="pub-year">2024</div>
+                    </div>
+                    <div class="pub-content">
+                        <h4>Sch9/S6K controls DNA repair and DNA damage response efficiency in aging cells</h4>
+                        <p class="pub-authors">Lucca C, Ferrari E, <strong>Choudhary R</strong>, et al.</p>
+                        <div class="pub-highlights">
+                            <span class="highlight-tag cell">Cell Press</span>
+                            <span class="highlight-tag">Aging</span>
+                            <span class="highlight-tag">mTOR</span>
+                        </div>
+                    </div>
+                    <div class="pub-metrics">
+                        <span style="color: var(--accent); font-weight: 600;">New</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://scholar.google.com/citations?user=Vu0mIVAAAAAJ" target="_blank" class="btn btn-primary" style="display: inline-flex;">
+                    View Full Publication List
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Advisory Services</h2>
+                <p>Strategic scientific guidance for biotech companies and investment firms</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-number">01</div>
+                    <h3>Pipeline Strategy</h3>
+                    <ul class="service-list">
+                        <li>Target validation & prioritization</li>
+                        <li>Mechanism of action assessment</li>
+                        <li>Competitive landscape analysis</li>
+                        <li>Indication selection strategy</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-number">02</div>
+                    <h3>Scientific Due Diligence</h3>
+                    <ul class="service-list">
+                        <li>Platform technology evaluation</li>
+                        <li>IP & freedom-to-operate review</li>
+                        <li>Clinical data assessment</li>
+                        <li>Regulatory pathway analysis</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-number">03</div>
+                    <h3>R&D Leadership</h3>
+                    <ul class="service-list">
+                        <li>Research program design</li>
+                        <li>Team building & mentorship</li>
+                        <li>External collaboration setup</li>
+                        <li>Grant strategy & fundraising</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-number">04</div>
+                    <h3>Technical Consulting</h3>
+                    <ul class="service-list">
+                        <li>Genome integrity drug discovery</li>
+                        <li>DNA damage response targets</li>
+                        <li>Chromatin biology applications</li>
+                        <li>Aging & longevity therapeutics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners/Institutions -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 style="font-size: 1.5rem; color: var(--text-light);">Research Institutions & Collaborations</h2>
+            </div>
+            <div class="partners-grid fade-in">
+                <span class="partner-logo">IFOM ETS</span>
+                <span class="partner-logo">AIRC</span>
+                <span class="partner-logo">University of Milan</span>
+                <span class="partner-logo">NCBS-TIFR</span>
+                <span class="partner-logo">University of Tokyo</span>
+                <span class="partner-logo">MRC Edinburgh</span>
+                <span class="partner-logo">UBA-CONICET</span>
+                <span class="partner-logo">CNR Pavia</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Start a Conversation</h2>
+                <p>Available for advisory roles, consulting projects, and strategic partnerships</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Let's discuss how I can contribute to your scientific strategy</h3>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">I work with biotech companies, venture capital firms, and pharmaceutical partners to translate complex genome biology into therapeutic opportunities.</p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:ramveer.choudhary@ifom.eu" class="contact-method">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>ramveer.choudhary@ifom.eu</h4>
+                                <span class="contact-label">Primary Email</span>
+                            </div>
+                        </a>
+                        <a href="mailto:ramveerc@gmail.com" class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>ramveerc@gmail.com</h4>
+                                <span class="contact-label">Alternative Email</span>
+                            </div>
+                        </a>
+                        <div class="contact-method" style="cursor: default;">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4>+39 324 787 0701</h4>
+                                <span class="contact-label">Mobile / WhatsApp</span>
+                            </div>
+                        </div>
+                        <div class="contact-method" style="cursor: default;">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>IFOM ETS, Milan, Italy</h4>
+                                <span class="contact-label">Location</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <h4 style="margin-bottom: 1rem;">Professional Profiles</h4>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://orcid.org/0000-0002-5340-7854" target="_blank" style="padding: 0.75rem 1.5rem; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">ORCID</a>
+                            <a href="https://scholar.google.com/citations?user=Vu0mIVAAAAAJ" target="_blank" style="padding: 0.75rem 1.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">Google Scholar</a>
+                            <a href="https://www.linkedin.com/in/ramveer-choudhary-a69b13b6/" target="_blank" style="padding: 0.75rem 1.5rem; background: #0077b5; color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in">
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="your@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company / Organization</label>
+                            <input type="text" id="company" name="company" placeholder="Biotech Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option...</option>
+                                <option value="advisory">Scientific Advisory Board</option>
+                                <option value="consulting">Technical Consulting</option>
+                                <option value="diligence">Due Diligence</option>
+                                <option value="collaboration">Research Collaboration</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Describe your project or inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Dr. Ramveer Choudhary</h3>
+                    <p>Senior Research Scientist & Scientific Advisor specializing in genome integrity, molecular oncology, and 3D genome organization. Bridging fundamental research with biotech innovation.</p>
+                    <div class="social-links">
+                        <a href="https://orcid.org/0000-0002-5340-7854" target="_blank" title="ORCID">🆔</a>
+                        <a href="https://scholar.google.com/citations?user=Vu0mIVAAAAAJ" target="_blank" title="Google Scholar">📚</a>
+                        <a href="https://www.linkedin.com/in/ramveer-choudhary-a69b13b6/" target="_blank" title="LinkedIn">💼</a>
+                        <a href="mailto:ramveer.choudhary@ifom.eu" title="Email">✉️</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Scientific Advisory</a></li>
+                        <li><a href="#services">Due Diligence</a></li>
+                        <li><a href="#services">Pipeline Strategy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:ramveer.choudhary@ifom.eu">ramveer.choudhary@ifom.eu</a></li>
+                        <li><a href="tel:+393247870701">+39 324 787 0701</a></li>
+                        <li>IFOM ETS, Milan, Italy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Ramveer Choudhary. All rights reserved.</p>
+                <p>Last updated: March 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            // Create mailto link with form data
+            const subject = `Scientific Advisory Inquiry: ${data.interest}`;
+            const body = `Name: ${data.name}%0D%0AEmail: ${data.email}%0D%0ACompany: ${data.company}%0D%0AInterest: ${data.interest}%0D%0A%0D%0AMessage:%0D%0A${data.message}`;
+
+            window.location.href = `mailto:ramveer.choudhary@ifom.eu?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            // Show confirmation
+            alert('Thank you for your message! Your email client should open with a pre-filled message. If not, please email me directly at ramveer.choudhary@ifom.eu');
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
