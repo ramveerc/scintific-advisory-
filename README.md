@@ -1,1 +1,1 @@
-# scintific-advisory-
+# Sceintific-advisory-
